@@ -1,12 +1,16 @@
 #eureka的配置
+
+spring:
+   application:
+        name: registry-center
 server:
    port: 9000
 
 eureka:
    instance:
-       hostname: registry-1
+       hostname: localhost
    client:
-       registerWithEureka: false
+       registerWithEureka: true
        fetchRegistry: false
        serviceUrl:
            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
