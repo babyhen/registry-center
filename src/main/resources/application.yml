@@ -14,3 +14,8 @@ eureka:
        fetchRegistry: false
        serviceUrl:
            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+           
+           
+# log的配置
+logging:
+    config : classpath:log4j2.xml  
