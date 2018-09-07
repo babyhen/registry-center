@@ -1,22 +1,28 @@
 package com.pawpaw.registry;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import org.springframework.core.ResolvableType;
+import com.pawpaw.registry.service.IMyService;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = BootStrap.class)
 public class SprintTest {
+
+  
 	
-	Map<String,List<String>> m=new HashMap<>();
-	public static void main(String[] args) throws NoSuchFieldException, SecurityException {
-		
-		ResolvableType rt=ResolvableType.forField(SprintTest.class.getDeclaredField("m"));
-		
-		System.out.println(rt.getGenerics().length);
-		System.out.println(rt.getGenerics()[0].getType());
-		System.out.println(rt.getGenerics()[1].getType());
+	@Autowired
+	private  IMyService s;
+	
+	
+	@Test
+	public void m() {
+		this.s.print2();
 	}
+	
 	
 	
 }
