@@ -1,9 +1,13 @@
 package com.pawpaw.registry.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MyServiceImpl implements IMyService {
+
+	@Value("${PATHEXT}")
+	private String pathExt;
 
 	@Override
 	public void print(int age, String name) {
@@ -14,8 +18,8 @@ public class MyServiceImpl implements IMyService {
 
 	@Override
 	public void print2() {
-		System.out.println(100000);
-		
+		System.out.println(this.pathExt);
+
 	}
 
 }
