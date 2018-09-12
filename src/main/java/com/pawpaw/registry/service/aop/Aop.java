@@ -19,7 +19,7 @@ public class Aop {
 
 	@Around("allMethod()")
 	public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
-		return new EnableCacheAdvisor(null, joinPoint).advise();
+		return new EnableCacheAdvisor(null, joinPoint).adviseEnableCache();
 	}
 
 }
