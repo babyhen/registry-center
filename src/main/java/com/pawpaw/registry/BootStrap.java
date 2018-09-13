@@ -1,20 +1,14 @@
 package com.pawpaw.registry;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
-import com.pawpaw.registry.service.BService;
-import com.pawpaw.registry.service.IMyService;
-
+@SpringBootApplication
+@EnableEurekaServer
 public class BootStrap {
 	public static void main(String[] args) {
 
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.scan("com.pawpaw.registry");
-		context.refresh();
-		IMyService service = context.getBean(IMyService.class);
-		service.print();
-		BService bs = context.getBean(BService.class);
-		bs.print();
-
+		new SpringApplicationBuilder(BootStrap.class).run(args);
 	}
 }
