@@ -1,6 +1,6 @@
 package com.pawpaw.registry.service;
 
-public interface AService {
+public interface BService {
 
 
 public void print();

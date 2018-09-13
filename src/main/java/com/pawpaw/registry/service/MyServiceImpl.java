@@ -12,20 +12,14 @@ public class MyServiceImpl implements IMyService {
 
 	@Autowired
 	private AService aService;
+	@Autowired
+	private BService bService;
 
 	@Value("${PATHEXT}")
 	private String pathExt;
 
 	@Override
-	public void print(int age, String name) {
-		System.out.println(age);
-		System.out.println(name);
-		System.out.println(this.aService);
-
-	}
-
-	@Override
-	public void print2() {
+	public void print() {
 		System.out.println(this.pathExt);
 
 	}
